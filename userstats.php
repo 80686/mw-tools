@@ -1,10 +1,16 @@
 #!/usr/bin/php
 <?php
+  ## creates a CSV file of all users found in a database
+  ## stdout is used - run with "php userstats.php > myfile.csv"
+  ## showing username, ID, number of edits, number of watchlist items, blocks
+  ## this routine will combine data of several wikis if they share the database
+
   error_reporting( E_ALL & ~E_NOTICE );
   define( 'FRAMEWORK_SQLHOST', 'localhost' );
   define( 'FRAMEWORK_SQLDB', 'db' );
   define( 'FRAMEWORK_SQLUSER', 'root');
   define( 'FRAMEWORK_SQLPW', '' );
+  # define the wikis (MediaWiki table name prefix)
   $wikis = array( 'wikia', 'wikib', 'wikic' );
   
   include( 'mysql.php' );

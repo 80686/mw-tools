@@ -1,10 +1,14 @@
 #!/usr/bin/php
 <?php
+  ## delete a user completely, including all edits, log entries...
+
   error_reporting( E_ALL & ~E_NOTICE );
   define( 'FRAMEWORK_SQLHOST', 'localhost' );
   define( 'FRAMEWORK_SQLDB', 'db' );
   define( 'FRAMEWORK_SQLUSER', 'root');
   define( 'FRAMEWORK_SQLPW', '' );
+  # table prefixes - useful if you have several wikis in one database and want to run this routine on all these wikis
+  # add or remove entries as needed
   $wikis = array( 'wikia', 'wikib', 'wikic' );
   
   include( 'mysql.php' );
